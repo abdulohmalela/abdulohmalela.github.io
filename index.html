@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self'"> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-flutter-init' 'wasm-unsafe-eval' https://www.gstatic.com/flutter-canvaskit/; font-src https://fonts.gstatic.com; > -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="wpOceans">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
@@ -502,8 +504,8 @@
                         <!-- Comments -->
                         <div class="comment-thread mt-3" style="background-color: #fff; border: 1px solid #E0E0E0; height: 300px; overflow-y: scroll;">
                             <!-- Comment 1 start -->
-                            <!-- <iframe src="https://script.google.com/macros/s/AKfycbxmyvbLKRtKhHClVgjKA77bO8MZFDJJeW-quD7vLaYS/exec" width="100%" height="100%"></iframe> -->
-                            <iframe src="https://script.google.com/macros/s/AKfycbz_tOoDF19FoIgNosnNtbKeun-b1byJwzFBgcKh0mPbafA0X3Gkw_3Edq_u65DA56iTHg/exec" width="100%" height="100%"></iframe>
+                            <!-- <iframe src="https://script.google.com/macros/s/AKfycbxmyvbLKRtKhHClVgjKA77bO8MZFDJJeW-quD7vLaYS/exec?igu=1" width="100%" height="100%"></iframe> -->
+                            <iframe src="https://script.google.com/macros/s/AKfycbz_tOoDF19FoIgNosnNtbKeun-b1byJwzFBgcKh0mPbafA0X3Gkw_3Edq_u65DA56iTHg/exec?igu=1" width="100%" height="100%"></iframe>
                             <!-- Comment 1 end -->
                         </div>
 
@@ -737,7 +739,7 @@
                 setTimeout(() => {
                     alertSuccess.style.display = 'none';
                 }, 1000);
-                var iframe = `<iframe src="https://script.google.com/macros/s/AKfycbxmyvbLKRtKhHClVgjKA77bO8MZFDJJeW-quD7vLaYS/exec" width="100%" height="100%"></iframe>`;
+                var iframe = `<iframe src="https://script.google.com/macros/s/AKfycbz_tOoDF19FoIgNosnNtbKeun-b1byJwzFBgcKh0mPbafA0X3Gkw_3Edq_u65DA56iTHg/exec?igu=1" width="100%" height="100%"></iframe>`;
                 $('.comment-thread').html(iframe);
             })
             .catch(error => {

@@ -684,10 +684,6 @@
                     </div>
                 </div>
             </div>
-            <audio autoplay>
-                <source src="/assets/audio.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
             <div class="ft-shape-1">
                 <img src="assets/images/footer-shape-1.svg" alt="">
             </div>
@@ -715,7 +711,7 @@
             $(this).html(event.strftime('<div class="single-countdown"><h2>%D</h2> <span>Days</span></div> <div class="single-countdown"><h2>%H</h2> <span>Hours</span></div> <div class="single-countdown"><h2>%M</h2> <span>Minutes</span></div> <div class="single-countdown"><h2>%S</h2> <span>Seconds</span></div>'));
         });
 
-        
+
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzuQvWWYnwiaH68Ty-z8oEI8DrW-nJ4bPG6fF-BqFAE56NJT69x3Pih-17iFiazXtPi6Q/exec'
         const form = document.forms['comments-form']
         const btnKirim = document.querySelector('.btn-kirim');
@@ -750,7 +746,15 @@
                 }, 1000);
                 console.error('Error!', error.message)
             })
-        })
+        });
+
+        function playSound(loop) {
+            let audio = new Audio("/assets/audio.mp3");
+            audio.loop = loop;
+            audio.play();
+        }
+
+        playSound(true);
     </script>
 </body>
 

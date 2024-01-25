@@ -63,10 +63,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url(assets/images/bg-prewed.jpg);
+            background-image: url(assets/images/bg-prewed-2.jpg);
             z-index: -1;
             filter: grayscale();
             background-position: center;
+            background-size: cover;
         }
         .cover-undangan.buka{
             transform: translateY(-100vh);
@@ -96,8 +97,10 @@
         <!-- start of hero -->
         <section class="cover-undangan w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
             <main>
-                <p>To our beloved friends and relatives, </p>
-                <h1>Abduloh & Raya</h1>
+                <p>To our beloved friends and relatives : </p>
+                <h1 id="tamu-undangan" class="pb-5">Tamu Undangan</h1>
+
+                <h2 class="mt-5">Abduloh & Raya</h2>
                 <p>We Are Getting Married February 04, 2024</p>
                 <div class="clock-grids">
                     <div id="jam2" style="margin-top: -50px;"></div>
@@ -411,7 +414,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="grid">
+                            <!-- <div class="grid">
                                 <div class="img-holder">
                                     <a href="assets/images/portfolio/wedd/8.jpg" class="fancybox"
                                         data-fancybox-group="gall-1">
@@ -432,7 +435,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="grid">
                                 <div class="img-holder">
                                     <a href="assets/images/portfolio/wedd/10.jpg" class="fancybox"
@@ -609,12 +612,12 @@
                                         <li>Margaluyu Timur. RT.31/14, Sukamandi Jaya, Subang</li>
                                         <!-- <li></li> -->
                                         <li>
-                                            <a class="popup-gmaps"
-                                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.67405047375917!2d107.6614281935097!3d-6.343198740533235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6969fc3010756b%3A0xb4b78aeeafef4a57!2sSukamandijaya%2C%20Kec.%20Ciasem%2C%20Kabupaten%20Subang%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1705651344648!5m2!1sid!2sid">See
+                                            <a href="https://maps.app.goo.gl/8n9j2SHdJ1tcJBmj9" target="_blank">See
                                                 Location
                                             </a>
                                         </li>
                                     </ul>
+                                    <iframe class="mt-2" style="width: 100%; height: 95%;" src="https://www.google.com/maps?q=-6.343189549258208, 107.66108170454254&hl=es;z=14&output=embed"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -847,6 +850,19 @@
             enableScroll();
             playSound(true);
         });
+
+        function getNameUrl() {
+            const myKey = window.location.search;
+            const urlParam = new URLSearchParams(myKey);
+            const tamu = urlParam.get('to');
+            if (tamu) {
+                $('#tamu-undangan').text(tamu);
+            }else{
+                $('#tamu-undangan').text('Tamu Undangan');
+            }
+        }
+
+        getNameUrl();
     </script>
 </body>
 

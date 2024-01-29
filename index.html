@@ -641,16 +641,17 @@
                     <div class="row">
                         <div class="col col-lg-4 col-md-6 col-12">
                             <div class="wpo-blog-item wow fadeInUp" data-wow-duration="1000ms">
-                                <div class="wpo-blog-img bg-white p-3 pb-0">
-                                    <img src="assets/images/wallet/dana.png" alt="">
+                                <div class="wpo-blog-img bg-white p-3 pb-0 text-center">
+                                    <img src="assets/images/wallet/dana.png" alt="" style="width: 70%;">
                                 </div>
                                 <div class="wpo-blog-content">
-                                    <ul>
-                                        <li style="font-size: 20px;" class="list-dompet" data-nomor="085714549972">085714549972</li>
-                                        <li></li>
-                                    </ul>
-                                    <h2>
-                                        <a href="#">Thank You for sending us a gift</a>
+                                    <input type="text" value="085714549972" style="outline: none; border: none; font-size: 23px; width: 100%; text-align: center; font-family: 'Jost', sans-serif;" readonly id="rek-dana">
+                                    <br>
+                                    <center>
+                                        <button type="submit" class="theme-btn mt-2" onclick="getRekening('rek-dana')">Copy</button>
+                                    </center>
+                                    <h2 class="text-center">
+                                        <a href="javascript:void(0);">Thank You for sending us a gift</a>
                                     </h2>
                                 </div>
                             </div>
@@ -658,16 +659,17 @@
                         
                         <div class="col col-lg-4 col-md-6 col-12">
                             <div class="wpo-blog-item wow fadeInUp" data-wow-duration="1400ms">
-                                <div class="wpo-blog-img bg-white p-3 pb-0">
-                                    <img src="assets/images/wallet/bni.png" alt="">
+                                <div class="wpo-blog-img bg-white p-3 pb-0 text-center">
+                                    <img src="assets/images/wallet/bni.png" alt="" style="width: 70%;">
                                 </div>
                                 <div class="wpo-blog-content">
-                                    <ul>
-                                        <li style="font-size: 20px;" class="list-dompet" data-nomor="1239909891">1239909891</li>
-                                        <li></li>
-                                    </ul>
-                                    <h2>
-                                        <a href="#">Thank You for sending us a gift</a>
+                                    <input type="text" value="1239909891" style="outline: none; border: none; font-size: 23px; width: 100%; text-align: center; font-family: 'Jost', sans-serif;" readonly id="rek-bni">
+                                    <br>
+                                    <center>
+                                        <button type="submit" class="theme-btn mt-2" onclick="getRekening('rek-bni')">Copy</button>
+                                    </center>
+                                    <h2 class="text-center">
+                                        <a href="javascript:void(0);">Thank You for sending us a gift</a>
                                     </h2>
                                 </div>
                             </div>
@@ -857,12 +859,26 @@
             const tamu = urlParam.get('to');
             if (tamu) {
                 $('#tamu-undangan').text(tamu);
+                $('input[name=nama]').val(tamu);
             }else{
                 $('#tamu-undangan').text('Tamu Undangan');
             }
         }
 
         getNameUrl();
+
+        function getRekening(rekening) {
+            /* Get the text field */
+            // var copyText = document.getElementById("input_kode_kelas");
+            var copyText = document.getElementById(rekening);
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+            /* Alert the copied text */
+            alert("Rekening di copy : " + copyText.value);
+        }
     </script>
 </body>
 
